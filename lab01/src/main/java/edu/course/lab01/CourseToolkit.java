@@ -17,11 +17,11 @@ public final class CourseToolkit {
     }
 
     public static boolean isPrime(int number) {
-        if (number <= 2) {
+        if (number <= 1) {
             return false;
         }
 
-        for(int i = 2; i * i <= number; i++) {
+        for(int i = 2; i * i <= number; i += 3) {
            if (number % i == 0) {
                return false;
            }
@@ -48,7 +48,7 @@ public final class CourseToolkit {
     }
 
     public static double average(int[] values) {
-        if (values.length == 0 || values == null) {
+        if (values.length == 0) {
             throw new IllegalArgumentException("Массив пустой");
         }
 
