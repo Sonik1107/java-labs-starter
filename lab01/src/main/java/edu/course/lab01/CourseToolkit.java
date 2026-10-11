@@ -15,4 +15,48 @@ public final class CourseToolkit {
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for(int i = 2; i * i <= number; i += 3) {
+           if (number % i == 0) {
+               return false;
+           }
+        }
+
+        return true;
+    }
+
+    public static boolean isPalindrome(String text) {
+        if (text == null) {
+            throw new IllegalArgumentException("Текст пустой");
+        }
+
+        int l = 0;
+        int r = text.length() - 1;
+        while (l < r) {
+            if (text.charAt(l) != text.charAt(r)) {
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
+    }
+
+    public static double average(int[] values) {
+        if (values.length == 0) {
+            throw new IllegalArgumentException("Массив пустой");
+        }
+
+        double len = values.length;
+        double sum = 0;
+        for (int number : values) {
+            sum += number;
+        }
+        return sum / len;
+    }
 }
