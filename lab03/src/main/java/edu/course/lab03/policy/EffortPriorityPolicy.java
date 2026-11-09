@@ -1,0 +1,14 @@
+package edu.course.lab03.policy;
+
+import edu.course.lab03.ProjectTask;
+
+public class EffortPriorityPolicy implements PriorityPolicy {
+    @Override
+    public int calculatePriority(ProjectTask task) {
+        if (task == null) {
+            throw new IllegalArgumentException("Задача не может быть null");
+        }
+        return task.getEstimatedHours();
+    }
+}
+
